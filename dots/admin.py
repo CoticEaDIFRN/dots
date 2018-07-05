@@ -1,5 +1,8 @@
 from django.contrib.admin import register, ModelAdmin, TabularInline, StackedInline
+from django.contrib.auth.admin import UserAdmin
 from .models import Colaborador, Vinculo, Registro, SolicitacaoApontamento, Apontamento
+
+register(Colaborador, UserAdmin)
 
 
 @register(Colaborador)

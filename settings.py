@@ -1,7 +1,9 @@
 import os
 from utils import env_as_bool, env_as_list, env_as_str
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+print(BASE_DIR)
 
 
 SECRET_KEY = env_as_str('SECRET_KEY', 'changeme')
@@ -60,18 +62,19 @@ WSGI_APPLICATION = 'wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite'),
     }
 }
+
+AUTH_USER_MODEL = 'dots.Colaborador'
+
 
 # Example:
 # 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator,'
 # 'django.contrib.auth.password_validation.MinimumLengthValidator,'
 # 'django.contrib.auth.password_validation.CommonPasswordValidator,'
 # 'django.contrib.auth.password_validation.NumericPasswordValidator'
-CPF_VALIDATOR = 'django_brfied.django_brfied.validators.CPFAuthValidator'
-AUTH_PASSWORD_VALIDATORS = [{'NAME': v} for v in env_as_list('AUTH_PASSWORD_VALIDATORS', CPF_VALIDATOR) if v != '']
-print(AUTH_PASSWORD_VALIDATORS)
+AUTH_PASSWORD_VALIDATORS = [{'NAME': v} for v in env_as_list('AUTH_PASSWORD_VALIDATORS', '') if v != '']
 
 LANGUAGE_CODE = env_as_str('LANGUAGE_CODE', 'pt-br')
 TIME_ZONE = env_as_str('TIME_ZONE', 'UTC')
