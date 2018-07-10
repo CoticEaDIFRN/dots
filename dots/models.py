@@ -96,8 +96,8 @@ class SolicitacaoApontamento(Model):
     comprovante = FilePathField('Comprovante', null=True)
 
     class Meta:
-        verbose_name = 'Registro'
-        verbose_name_plural = 'Registros'
+        verbose_name = 'Solicitação de apontamento'
+        verbose_name_plural = 'Solicitações de apontamentos'
 
     def __str__(self):
         return "%s - %s - %s" % (self.vinculo, self.tipo, self.quando)

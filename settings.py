@@ -15,7 +15,9 @@ MY_APPS = [
 ]
 
 THIRD_APPS = [
-    'django_brfied'
+    'django_brfied',
+    'rest_framework',
+    'django_extensions'
 ]
 
 DJANGO_APPS = [
@@ -83,3 +85,10 @@ USE_L10N = env_as_bool('USE_L10N')
 USE_TZ = env_as_bool('USE_TZ')
 
 STATIC_URL = env_as_str('STATIC_URL', '/static/')
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
