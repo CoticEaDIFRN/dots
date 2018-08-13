@@ -10,4 +10,4 @@ def env_as_bool(name):
 
 
 def env_as_list(name, default):
-    return env_as_str(name, default).split(',')
+    return [x for x in env_as_str(name, default).split(',') if x != '']

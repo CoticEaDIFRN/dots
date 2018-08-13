@@ -69,9 +69,7 @@ DATABASES = {
 # 'django.contrib.auth.password_validation.MinimumLengthValidator,'
 # 'django.contrib.auth.password_validation.CommonPasswordValidator,'
 # 'django.contrib.auth.password_validation.NumericPasswordValidator'
-CPF_VALIDATOR = 'django_brfied.django_brfied.validators.CPFAuthValidator'
-AUTH_PASSWORD_VALIDATORS = [{'NAME': v} for v in env_as_list('AUTH_PASSWORD_VALIDATORS', CPF_VALIDATOR) if v != '']
-print(AUTH_PASSWORD_VALIDATORS)
+AUTH_PASSWORD_VALIDATORS = [{'NAME': v} for v in env_as_list('AUTH_PASSWORD_VALIDATORS', '')]
 
 LANGUAGE_CODE = env_as_str('LANGUAGE_CODE', 'pt-br')
 TIME_ZONE = env_as_str('TIME_ZONE', 'UTC')
